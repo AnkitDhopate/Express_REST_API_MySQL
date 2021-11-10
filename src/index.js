@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql");
 const bcrypt = require("bcrypt");
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
@@ -58,6 +59,6 @@ app.get("/user/get_all_users", (req, res) => {
   });
 });
 
-app.listen(2000, () => {
-  console.log("Connect on port 2000");
+app.listen(PORT, () => {
+  console.log(`Connect on port ${PORT}`);
 });
